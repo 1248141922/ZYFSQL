@@ -1,0 +1,12 @@
+import string
+import itertools as its
+
+words = string.printable
+r = its.product(words, repeat=8)
+pas = open(r"passwd.txt", 'a')
+for i in r:
+    pas.write(''.join(i))
+    pas.write(''.join('\n'))
+    print(f'{"".join(i)}写入成功！ ')
+pas.close()
+print('密码本写好了')
